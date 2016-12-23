@@ -1,22 +1,31 @@
 var mc;
 
-Template.daydMadClick.onRendered(function() {
+Template.daydMadClick.onCreated(function() {
   Meteor.subscribe('daydMadClick');
+  mc = new Dayd.MadClick;
 });
 Template.daydMadClick.onRendered(function() {
 
-  mc = new Dayd.MadClick;
 });
 
 Template.daydMadClick.helpers({
 
   myScore: function() {
-    var mc = MadClick.findOne({"user._id": Meteor.userId()});
-    return mc ? mc.score : '0';
+    var s = MadClick.findOne({"user._id": Meteor.userId()});
+    mc.score = s ? s.score : 0;
+    return mc.score;
   },
 
   scores: function() {
     return MadClick.find({}, {sort: {score: -1}});
+  },
+
+  multiplier: function() {
+    return mc.react.get('multiplier');
+  },
+
+  nextUpgrade: function() {
+    return mc.getNextUpgrade();
   },
 
   username: function() {
@@ -35,6 +44,10 @@ Template.daydMadClick.events({
 
   'click .js-click': function() {
     mc.btnClick();
+  },
+
+  'click .js-upgrade': function() {
+    mc.upgrade(this);
   }
 
 });

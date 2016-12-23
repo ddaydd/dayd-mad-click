@@ -1,7 +1,13 @@
 <template name="daydMadClick">
   {{#if currentUser }}
-    <div>My score : {{myScore}}</div>
+    <div>My score : {{myScore}} <label class="label label-primary">x{{multiplier}}</label></div>
     <button class="btn btn-xs btn-warning js-click">Click Me</button>
+
+    <div class="m-t-10">
+      {{#each nextUpgrade}}
+        <button class="btn btn-xs btn-success js-upgrade">Upgrade {{label}}, price: {{price}}</button>
+      {{/each}}
+    </div>
   {{else}}
     Log you in to play !
   {{/if}}
