@@ -8,7 +8,6 @@ class madClick {
     this.score = 0;
     this.react = new ReactiveDict();
     this.react.set('multiplier', 1);
-    var scores = MadClick.find({}, {sort: {score: 1}}).fetch();
   }
 
   btnClick() {
@@ -16,8 +15,9 @@ class madClick {
   }
 
   getNextUpgrade() {
+    var m = this.react.get('multiplier');
     return [
-      {key: 'x2', label: 'x2', price: 100, value: 2}
+      {key: 'x2', label: 'x2', price: m * 100, value: 2}
     ]
   }
 
