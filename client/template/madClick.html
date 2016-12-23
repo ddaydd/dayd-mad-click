@@ -1,0 +1,11 @@
+<template name="daydMadClick">
+  <div>My score : {{myScore}}</div>
+  <button class="btn btn-xs btn-warning js-click">Click Me</button>
+
+  <h2>Hall Of Fame</h2>
+  <div>
+    {{#each scores}}
+      <div>{{username}} : {{score}}</div>
+    {{/each}}
+  </div>
+</template>
