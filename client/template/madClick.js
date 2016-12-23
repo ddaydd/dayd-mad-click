@@ -16,7 +16,7 @@ Template.daydMadClick.helpers({
   },
 
   scores: function() {
-    return MadClick.find({});
+    return MadClick.find({}, {sort: {score: -1}});
   },
 
   username: function() {
