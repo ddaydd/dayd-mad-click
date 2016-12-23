@@ -1,7 +1,10 @@
 <template name="daydMadClick">
-  <div>My score : {{myScore}}</div>
-  <button class="btn btn-xs btn-warning js-click">Click Me</button>
-
+  {{#if currentUser }}
+    <div>My score : {{myScore}}</div>
+    <button class="btn btn-xs btn-warning js-click">Click Me</button>
+  {{else}}
+    Log you in to play !
+  {{/if}}
   <h2>Hall Of Fame</h2>
   <div>
     {{#each scores}}
