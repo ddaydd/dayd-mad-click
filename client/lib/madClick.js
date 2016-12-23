@@ -4,28 +4,35 @@ if(typeof(Dayd) == 'undefined') Dayd = {};
 class madClick {
 
   constructor() {
-    this.scores = [];
-    this.score = 0;
-    this.react = new ReactiveDict();
-    this.react.set('multiplier', 1);
+    Meteor.subscribe('daydMadClick');
+  }
+
+  myScore() {
+    var s = MadClick.findOne({"user._id": Meteor.userId()});
+    return s && s.score ? s.score : 0;
+  }
+
+  myMultiplier() {
+    var s = MadClick.findOne({"user._id": Meteor.userId()});
+    return s && s.multiplier ? s.multiplier : 1;
   }
 
   btnClick() {
-    Meteor.call('addClick', this.react.get('multiplier'));
+    Meteor.call('mCAddClick', this.myMultiplier());
   }
 
   getNextUpgrade() {
-    var m = this.react.get('multiplier');
+    var m = this.myMultiplier();
     return [
       {key: 'x2', label: 'x2', price: m * 100, value: 2}
     ]
   }
 
   upgrade(u) {
-    if(this.score > u.price) {
-      var m = this.react.get('multiplier');
-      this.react.set('multiplier', m * u.value);
-      Meteor.call('addClick', -u.price);
+    if(this.myScore() > u.price) {
+      var m = this.myMultiplier();
+      Meteor.call('mCUpdateUser', m * u.value);
+      Meteor.call('mCAddClick', -u.price);
     }
   }
 }

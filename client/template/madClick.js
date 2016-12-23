@@ -1,31 +1,31 @@
 var mc;
 
 Template.daydMadClick.onCreated(function() {
-  Meteor.subscribe('daydMadClick');
   mc = new Dayd.MadClick;
 });
 Template.daydMadClick.onRendered(function() {
-
 });
 
 Template.daydMadClick.helpers({
-
-  myScore: function() {
-    var s = MadClick.findOne({"user._id": Meteor.userId()});
-    mc.score = s ? s.score : 0;
-    return mc.score;
-  },
 
   scores: function() {
     return MadClick.find({}, {sort: {score: -1}});
   },
 
-  multiplier: function() {
-    return mc.react.get('multiplier');
+  myScore: function() {
+    return mc.myScore();
+  },
+
+  myMultiplier: function() {
+    return mc.myMultiplier();
   },
 
   nextUpgrade: function() {
     return mc.getNextUpgrade();
+  },
+
+  upgradeEnabled: function() {
+    return mc.myScore() > this.price ? '' : 'disabled';
   },
 
   username: function() {
