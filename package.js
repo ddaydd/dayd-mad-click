@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   api.use([
     'mongo',
     'accounts-base',
-    'twbs:bootstrap'
+    'twbs:bootstrap@3.3.6'
   ]);
 
   api.use("templating", "client");

@@ -6,7 +6,7 @@ Github:
 https://github.com/ddaydd/dayd-mad-click
 
 AtmosphereJS:
-https://atmospherejs.com/dayd/dayd-mad-click
+https://atmospherejs.com/dayd/mad-click
 
 Report bugs or suggestions:
 https://github.com/ddaydd/dayd-mad-click/issues
