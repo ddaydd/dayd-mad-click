@@ -21,7 +21,7 @@ Package.onUse(function(api) {
     'reactive-dict@1.1.8'
   ]);
 
-  api.use("templating", "client");
+  api.use("templating@1.2.15", "client");
 
   api.add_files(['client/lib/helpers.js', 'client/lib/madClick.js', 'client/template/madClick.html', 'client/template/madClick.less', 'client/template/madClick.js'], ['client']);
   api.add_files(['lib/collections.js', 'lib/methods.js'], ['server', 'client']);
