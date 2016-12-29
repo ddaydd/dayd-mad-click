@@ -23,7 +23,7 @@ Package.onUse(function(api) {
 
   api.use("templating", "client");
 
-  api.add_files(['client/lib/madClick.js', 'client/template/madClick.html', 'client/template/madClick.less', 'client/template/madClick.js'], ['client']);
+  api.add_files(['client/lib/helpers.js', 'client/lib/madClick.js', 'client/template/madClick.html', 'client/template/madClick.less', 'client/template/madClick.js'], ['client']);
   api.add_files(['lib/collections.js', 'lib/methods.js'], ['server', 'client']);
   api.add_files(['server/publish.js'], ['server']);
 

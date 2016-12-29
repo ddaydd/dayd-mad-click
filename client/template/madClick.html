@@ -1,11 +1,11 @@
 <template name="daydMadClick">
   {{#if currentUser }}
-    <div>My score : {{myScore}} <label class="label label-primary">x{{myMultiplier}}</label></div>
+    <div>My score : {{sigfig myScore}} <label class="label label-primary">x{{sigfig myMultiplier}}</label></div>
     <button class="btn btn-xs btn-primary js-click">Click Me</button>
 
     <div class="m-t-10">
       {{#each nextUpgrade}}
-        <button class="btn btn-xs btn-success js-upgrade" {{upgradeEnabled}}>Upgrade {{label}}, price: {{price}}</button>
+        <button class="btn btn-xs btn-success js-upgrade" {{upgradeEnabled}}>Upgrade {{label}}, price: {{sigfig price}}</button>
       {{/each}}
     </div>
   {{else}}
@@ -14,7 +14,7 @@
   <h2>Hall Of Fame</h2>
   <ol>
     {{#each scores}}
-      <li>{{username}} : {{score}} {{#if multiplier}}<label class="label label-primary">x{{multiplier}}</label>{{/if}}</li>
+      <li>{{username}} : {{sigfig score}} {{#if multiplier}}<label class="label label-primary">x{{sigfig multiplier}}</label>{{/if}}</li>
     {{/each}}
   </ol>
 </template>
