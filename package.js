@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dayd:mad-click',
-  version: '0.0.3',
+  version: '0.0.4',
   // Brief, one-line summary of the package.
   summary: "Mad Click",
   // URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.1.0.3');
+  api.versionsFrom('1.4.2.3');
 
   api.use([
     'mongo',
