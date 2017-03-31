@@ -14,10 +14,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
 
   api.use([
+    'ecmascript',
     'mongo',
     'less',
     'accounts-base',
-    'twbs:bootstrap@3.3.6',
     'reactive-dict@1.1.8'
   ]);
 

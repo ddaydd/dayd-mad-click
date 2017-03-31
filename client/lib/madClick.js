@@ -1,5 +1,4 @@
-'use strict';
-if(typeof(Dayd) == 'undefined') Dayd = {};
+if(typeof(Dayd) === 'undefined') Dayd = {};
 
 class madClick {
 
