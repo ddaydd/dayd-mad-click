@@ -27,5 +27,4 @@ Package.onUse(function(api) {
   api.add_files(['lib/collections.js', 'lib/methods.js'], ['server', 'client']);
   api.add_files(['server/publish.js'], ['server']);
 
-  api.export(['Dayd'], 'client');
 });
