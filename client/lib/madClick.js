@@ -1,6 +1,7 @@
 if(typeof(Dayd) === 'undefined') Dayd = {};
+if(typeof(Dayd.game) === 'undefined') Dayd.game = {};
 
-class madClick {
+class MadClick {
 
   constructor() {
     Meteor.subscribe('daydMadClick');
@@ -36,4 +37,4 @@ class madClick {
   }
 }
 
-Dayd.MadClick = madClick;
+Dayd.game.MadClick = MadClick;

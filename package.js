@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dayd:mad-click',
-  version: '0.0.4',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: "Mad Click",
   // URL to the Git repository containing the source code for this package.
@@ -14,7 +14,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
 
   api.use([
-    'ecmascript',
+    'dayd:core',
+    'ecmascript@0.6.3',
     'mongo',
     'less',
     'accounts-base',

@@ -1,7 +1,7 @@
-var mc;
+let mc;
 
 Template.daydMadClick.onCreated(function() {
-  mc = new Dayd.MadClick;
+  mc = new Dayd.game.MadClick;
 });
 Template.daydMadClick.onRendered(function() {
 });
