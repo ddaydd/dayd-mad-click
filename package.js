@@ -14,7 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
 
   api.use([
-    'dayd:core',
+    'orbiter:core',
     'ecmascript@0.6.3',
     'mongo',
     'less',
