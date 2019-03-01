@@ -1,6 +1,6 @@
 <template name="daydMadClick">
   {{#if currentUser }}
-    <div>My score : {{sigfig myScore}} <label class="label label-primary">x{{sigfig myMultiplier}}</label></div>
+    <div>My score : {{sigfig myScore}} <label class="badge badge-primary">x{{sigfig myMultiplier}}</label></div>
     <button class="btn btn-xs btn-primary js-click">Click Me</button>
 
     <div class="m-t-10">
@@ -14,7 +14,7 @@
   <h2>Hall Of Fame</h2>
   <ol>
     {{#each scores}}
-      <li>{{username}} : {{sigfig score}} {{#if multiplier}}<label class="label label-primary">x{{sigfig multiplier}}</label>{{/if}}</li>
+      <li>{{username}} : {{sigfig score}} {{#if multiplier}}<label class="badge badge-primary">x{{sigfig multiplier}}</label>{{/if}}</li>
     {{/each}}
   </ol>
 </template>
